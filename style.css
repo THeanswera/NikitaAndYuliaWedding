@@ -618,19 +618,18 @@ img {
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    padding-top: 4rem;
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+    transform: translateX(100%);
+    transition: transform 0.3s ease, visibility 0.3s;
     z-index: 1001;
   }
 
   .nav-links.open {
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateX(0);
   }
 
   .nav-links a {
