@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Юлия & Никита — Свадьба 20.05.2026</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Юлия & Никита — Приглашение на свадьбу">
+  <meta property="og:description" content="Приглашаем вас разделить с нами радость главного события в нашей жизни. 20 мая 2026 года.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <nav class="header-nav">
+      <a href="#hero" class="header-logo">Ю & Н</a>
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Главная</a></li>
+        <li><a href="#letter">Письмо</a></li>
+        <li><a href="#menu">Меню</a></li>
+        <li><a href="#gifts">Подарки</a></li>
+        <li><a href="#rsvp">Подтверждение</a></li>
+        <li><a href="#schedule">Расписание</a></li>
+      </ul>
+      <a href="#" class="header-calendar-btn" id="headerCalendarBtn">Добавить в календарь</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- 1. HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-date-col anim-fade" data-delay="0">
+          <span class="hero-date-num">20</span>
+          <span class="hero-date-num">05</span>
+          <span class="hero-date-num">26</span>
+        </div>
+        <div class="hero-photo-col anim-fade" data-delay="200">
+          <div class="photo-placeholder photo-placeholder--hero">
+            <span>[фото]</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-names">
+        <h1 class="anim-fade" data-delay="400">
+          <span class="name-line">ЮЛИЯ</span>
+          <span class="name-and">and</span>
+          <span class="name-line">НИКИТА</span>
+        </h1>
+      </div>
+
+      <p class="hero-subtitle anim-fade" data-delay="600">
+        Приглашаем вас разделить с нами радость<br>главного события в нашей жизни
+      </p>
+
+      <p class="hero-date-full anim-fade" data-delay="700">
+        <strong>СРЕДА, 20 МАЯ 2026</strong>
+      </p>
+
+      <p class="hero-address anim-fade" data-delay="800">
+        Банкетный зал «Тиара»<br>
+        Санкт-Петербургское шоссе, 88
+      </p>
+
+      <p class="hero-script anim-fade" data-delay="900">
+        Ждём Вас на нашей свадьбе
+      </p>
+
+      <!-- Countdown -->
+      <div class="countdown anim-fade" data-delay="1000" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-num" id="cdWeeks">00</div>
+          <div class="countdown-label">недель</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="cdDays">00</div>
+          <div class="countdown-label">дней</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="cdHours">00</div>
+          <div class="countdown-label">часов</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="cdMinutes">00</div>
+          <div class="countdown-label">минут</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="cdSeconds">00</div>
+          <div class="countdown-label">секунд</div>
+        </div>
+      </div>
+
+      <a href="#" class="btn btn--calendar anim-fade" data-delay="1100" id="calendarBtn">
+        Добавить в календарь
+      </a>
+    </section>
+
+    <!-- 2. DEAR GUEST -->
+    <section class="section section--letter" id="letter">
+      <div class="container">
+        <h2 class="section-title section-title--serif anim-up">Дорогой<br>Гость!</h2>
+        <p class="letter-text anim-up">
+          Мы рады сообщить Вам, что 20.05.2026 состоится самое главное торжество
+          в нашей жизни — день нашей свадьбы! Приглашаем Вас разделить с нами
+          радость этого незабываемого дня.
+        </p>
+        <p class="letter-datetime anim-up"><strong>20.05.2026 в 12:00</strong></p>
+        <div class="photo-placeholder photo-placeholder--letter anim-up">
+          <span>[фото]</span>
+        </div>
+        <p class="script-quote anim-up">Там, где посеяна любовь, растёт радость.</p>
+      </div>
+    </section>
+
+    <!-- 3. MENU -->
+    <section class="section section--menu" id="menu">
+      <div class="container">
+        <h2 class="section-title section-title--caps anim-up">МЕНЮ</h2>
+        <p class="section-text anim-up">
+          Меню разнообразно, поэтому сообщите нам заранее, если у вас есть
+          какие-либо предпочтения или диетические ограничения.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. GIFTS -->
+    <section class="section section--gifts" id="gifts">
+      <div class="container">
+        <h2 class="section-title section-title--caps anim-up">ПОЖЕЛАНИЯ ПО ПОДАРКАМ</h2>
+        <p class="section-text anim-up">
+          Дорогие гости! Мы с нетерпением ждём встречи с вами на нашей свадьбе.
+          Ваше присутствие для нас бесценно!
+        </p>
+        <p class="section-text anim-up">
+          Если вы захотите порадовать нас подарком — мы будем благодарны за вклад
+          в строительство нашего семейного гнёздышка. Совсем скоро нас станет трое,
+          и каждый ваш рубль станет тёплым кирпичиком в фундаменте нашей маленькой семьи.
+        </p>
+        <p class="section-text anim-up">
+          Спасибо, что вы рядом с нами в этот важный день!
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. PALETTE -->
+    <section class="section section--palette" id="palette">
+      <div class="container">
+        <h2 class="section-title section-title--italic anim-up">Введите текст</h2>
+        <p class="section-text anim-up">
+          Будем благодарны, если при выборе нарядов на наше торжество
+          вы придержитесь следующей палитры
+        </p>
+        <div class="palette-circles anim-up">
+          <div class="palette-circle" style="background:#D4C5B0;" title="Бежевый"></div>
+          <div class="palette-circle" style="background:#C9A8A8;" title="Пыльно-розовый"></div>
+          <div class="palette-circle" style="background:#B5C4B1;" title="Sage green"></div>
+          <div class="palette-circle" style="background:#B0C4C9;" title="Нежно-голубой"></div>
+          <div class="palette-circle" style="background:#C5C0D4;" title="Лавандовый"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. RSVP -->
+    <section class="section section--rsvp" id="rsvp">
+      <div class="container">
+        <h2 class="section-title section-title--caps anim-up">ПОДТВЕРЖДЕНИЕ</h2>
+        <p class="section-text anim-up">Пожалуйста, подтвердите своё присутствие до 10.04.2026</p>
+        <p class="script-quote anim-up">Ждём Вас!</p>
+
+        <form class="rsvp-form anim-up" id="rsvpForm" action="https://formspree.io/f/XXXXXXXXX" method="POST">
+          <div class="form-group">
+            <label for="guestName">Ваше имя</label>
+            <input type="text" id="guestName" name="name" required placeholder="Имя и фамилия">
+          </div>
+          <div class="form-group">
+            <label for="guestCount">Количество гостей</label>
+            <input type="number" id="guestCount" name="guests" min="1" max="10" value="1" required>
+          </div>
+          <div class="form-group">
+            <label for="guestDiet">Пищевые предпочтения и аллергии</label>
+            <textarea id="guestDiet" name="diet" rows="3" placeholder="Например: вегетарианец, аллергия на орехи, без глютена..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="guestPhone">Ваш телефон</label>
+            <input type="tel" id="guestPhone" name="phone" required placeholder="+7 (___) ___-__-__">
+          </div>
+          <button type="submit" class="btn btn--submit">Подтвердить присутствие</button>
+        </form>
+
+        <div class="rsvp-success" id="rsvpSuccess" hidden>
+          <p class="script-quote">Спасибо! Ждём вас 20 мая</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SCHEDULE -->
+    <section class="section section--schedule" id="schedule">
+      <div class="container">
+        <h2 class="section-title section-title--bold anim-up">Свадебное расписание</h2>
+
+        <div class="timeline">
+          <div class="timeline-item anim-up">
+            <div class="timeline-time">12:20</div>
+            <div class="timeline-content">
+              <h3>Торжественная регистрация брака</h3>
+              <p class="timeline-address">Санкт-Петербург, Петергоф, Торговая площадь, 5</p>
+              <p>Наша регистрация пройдёт в залах ЗАГСа Петродворцового района, живописного города Петергоф. Приглашаем всех разделить с нами такой торжественный момент!</p>
+            </div>
+          </div>
+
+          <div class="timeline-item anim-up">
+            <div class="timeline-time">13:00</div>
+            <div class="timeline-content">
+              <h3>Фотосессия</h3>
+              <p class="timeline-address">Санкт-Петербург, Петергоф, Торговая площадь, 5</p>
+              <p>Фотограф будет ловить самые светлые мгновения. Не стесняйтесь попадать в кадр — нам важно, чтобы вы остались в нашей свадебной истории.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item anim-up">
+            <div class="timeline-time">14:30</div>
+            <div class="timeline-content">
+              <h3>Фуршет</h3>
+              <p class="timeline-address">Санкт-Петербург, Петродворцовый район, посёлок Стрельна, Санкт-Петербургское шоссе, 88</p>
+              <p>В Банкетном зале «Тиара» время пролетит незаметно за вкусным фуршетом и общением с другими гостями!</p>
+            </div>
+          </div>
+
+          <div class="timeline-item anim-up">
+            <div class="timeline-time">15:00</div>
+            <div class="timeline-content">
+              <h3>Праздничное застолье с ведущим</h3>
+              <p>Это гармония, когда стол ломится от угощений, а за ним — ни минуты тишины. Ведущий плавно ведёт вечер: от душевных тостов до искромётных конкурсов, от первого бокала до танцев до вечера!</p>
+            </div>
+          </div>
+
+          <div class="timeline-item anim-up">
+            <div class="timeline-time">23:00</div>
+            <div class="timeline-content">
+              <h3>Окончание праздничного банкета</h3>
+              <p>Мы построили этот праздник вместе с вами — кирпичик за кирпичиком, из улыбок, объятий и тёплых слов. Спасибо, что стали частью нашей опоры. Любите друг друга так же искренне, как мы любим вас.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-script">Юлия & Никита</p>
+    <p class="footer-date">20.05.2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
