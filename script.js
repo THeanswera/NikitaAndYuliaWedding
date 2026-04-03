@@ -100,16 +100,53 @@ if (timeline) {
   tlObserver.observe(timeline);
 }
 
-/* ========== CALENDAR (Google Calendar intent) ========== */
+/* ========== CALENDAR ========== */
+function isMobile() {
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
 function openCalendar() {
-  const params = new URLSearchParams({
-    action: 'TEMPLATE',
-    text: 'Свадьба Юлии и Никиты',
-    dates: '20260520T090000Z/20260520T200000Z',
-    details: 'Торжественная регистрация — 12:20\nФотосессия — 13:00\nФуршет — 14:30\nПраздничное застолье — 15:00\nОкончание банкета — 23:00',
-    location: 'Банкетный зал «Тиара», Санкт-Петербургское шоссе, 88, посёлок Стрельна'
-  });
-  window.open('https://calendar.google.com/calendar/render?' + params.toString(), '_blank');
+  if (isMobile()) {
+    // На мобильных — Google Calendar intent (откроет приложение)
+    const params = new URLSearchParams({
+      action: 'TEMPLATE',
+      text: 'Свадьба Юлии и Никиты',
+      dates: '20260520T090000Z/20260520T200000Z',
+      details: 'Торжественная регистрация — 12:20\nФотосессия — 13:00\nФуршет — 14:30\nПраздничное застолье — 15:00\nОкончание банкета — 23:00',
+      location: 'Банкетный зал «Тиара», Санкт-Петербургское шоссе, 88, посёлок Стрельна'
+    });
+    window.open('https://calendar.google.com/calendar/render?' + params.toString(), '_blank');
+  } else {
+    // На десктопе — скачивание .ics (откроет Outlook / Apple Calendar / др.)
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Wedding//Yulia & Nikita//RU',
+      'BEGIN:VEVENT',
+      'DTSTART:20260520T090000Z',
+      'DTEND:20260520T200000Z',
+      'SUMMARY:Свадьба Юлии и Никиты',
+      'DESCRIPTION:Торжественная регистрация — 12:20\\nФотосессия — 13:00\\nФуршет — 14:30\\nПраздничное застолье — 15:00\\nОкончание банкета — 23:00',
+      'LOCATION:Банкетный зал «Тиара»\\, Санкт-Петербургское шоссе\\, 88\\, посёлок Стрельна',
+      'BEGIN:VALARM',
+      'TRIGGER:-P1D',
+      'ACTION:DISPLAY',
+      'DESCRIPTION:Завтра свадьба Юлии и Никиты!',
+      'END:VALARM',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'wedding-yulia-nikita.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
 }
 
 document.getElementById('calendarBtn').addEventListener('click', (e) => {
@@ -130,12 +167,16 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
 
   try {
     const response = await fetch(form.action, {
       method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
     });
 
     if (response.ok) {
