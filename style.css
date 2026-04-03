@@ -86,18 +86,14 @@ img {
   right: 0;
   z-index: 10000;
   background: rgba(255, 255, 255, 0);
-  transition: background 0.4s, box-shadow 0.4s;
+  backdrop-filter: blur(0px);
+  transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
 }
 
 .site-header.scrolled {
   background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
-}
-
-@media (min-width: 901px) {
-  .site-header.scrolled {
-    backdrop-filter: blur(12px);
-  }
 }
 
 .header-nav {

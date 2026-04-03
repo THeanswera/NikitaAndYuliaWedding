@@ -53,16 +53,33 @@ window.addEventListener('scroll', onScroll, { passive: true });
 /* ========== BURGER MENU ========== */
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
+const headerNav = navLinks.parentElement;
+
+function openMenu() {
+  // Move nav out of header so backdrop-filter doesn't trap position:fixed
+  document.body.appendChild(navLinks);
+  burger.classList.add('active');
+  navLinks.classList.add('open');
+}
+
+function closeMenu() {
+  burger.classList.remove('active');
+  navLinks.classList.remove('open');
+  // Move nav back into header for desktop layout
+  headerNav.insertBefore(navLinks, document.getElementById('headerCalendarBtn'));
+}
 
 burger.addEventListener('click', () => {
-  burger.classList.toggle('active');
-  navLinks.classList.toggle('open');
+  if (navLinks.classList.contains('open')) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 });
 
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    burger.classList.remove('active');
-    navLinks.classList.remove('open');
+    closeMenu();
   });
 });
 
